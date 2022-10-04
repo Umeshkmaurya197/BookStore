@@ -1,0 +1,13 @@
+<div class="main-div">
+  <div class="heading-div">
+    <span class="books-heading">Books</span>
+    <p >(128item)</p>
+  </div>
+  <div class="sort-div">
+      <select class="sort-selector-field" >
+        <option *ngFor="let sortBy of sortsBy"[value]="sortBy.value">
+          {{sortBy.viewValue}}
+        </option>
+      </select>
+  </div>
+</div>

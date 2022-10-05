@@ -1,11 +1,19 @@
+$bookbg: #f5f5f5;
+$white: #ffffff;
+$bookName: #0a0102;
+$authurName: #9d9d9d;
+$theme: #a03037;
+
 .main-div {
   display: flex;
+  margin-left: 8%;
+  margin-right: 6%;
   .heading-div {
     display: flex;
-    margin-left: 10rem;
-    margin-top: 2rem;
+    margin-left: 0%;
+    margin-top: 1.5%;
     .books-heading {
-      margin-right: 3px;
+      margin-right: 3%;
       font: normal normal normal 25px/30px roboto;
       letter-spacing: 0px;
       color: #0a0102;
@@ -17,13 +25,76 @@
     }
   }
   .sort-div {
-    height: 21px;
-    margin-left: 40rem;
-    margin-top: 2rem;
+    height: 10%;
+    margin-left: 72.8%;
+    margin-top: 1.5%;
     .sort-selector-field {
       height: 25px;
-      border-color:#E2E2E2;
+      border-color: #e2e2e2;
+      border-radius: 4%;
+    }
+  }
+}
+.grid-list-div {
+  margin-top: 0%;
+  margin-left: 8%;
+  margin-right: 8%;
+  height: 70%;
+  mat-grid-list {
+    background-color: white;
+    mat-grid-tile {
+      background-color: $bookbg;
+      border: 1px solid #E2E2E2;
       border-radius: 3px;
+      border-radius: 3px;
+      .grid-header {
+        background-color: $bookbg;
+        height: 50%;
+        img {
+          margin-left: 25%;
+          border-radius: 2px 2px 0px 0px;  //
+          height: 80%;
+          border: 1px; //
+          border-style: groove; //
+        }
+      }
+      .grid-footer {
+        background-color: $white;
+        height: 50%;
+        display: table-row;
+        h2 {
+          margin-top: 4%;
+          color: $bookName;
+          font: normal normal normal 14px/17px roboto;
+        }
+        span {
+          color: $authurName;
+          font: normal normal normal 10px/12px roboto;
+        }
+        p {
+          color: $bookName;
+        }
+        .buttons {
+          color: $white;
+          margin-top: 10%;
+          .add-cart-btn {
+            margin-right: 10px;
+            height: 35px;
+            width: 110px;
+            background-color: $theme;
+            font: normal normal medium 11px/13px roboto;
+          }
+          .wish-list-btn {
+            height: 35px;
+            width: 90px;
+            color: $bookName;
+            border: 1px solid #9d9d9d;
+            border-radius: 2px;
+            background-color: $white;
+            font: normal normal medium 11px/13px roboto;
+          }
+        }
+      }
     }
   }
 }

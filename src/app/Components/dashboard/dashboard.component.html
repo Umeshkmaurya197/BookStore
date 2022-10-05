@@ -1,13 +1,186 @@
 <div class="main-div">
   <div class="heading-div">
     <span class="books-heading">Books</span>
-    <p >(128item)</p>
+    <p>(128item)</p>
   </div>
   <div class="sort-div">
-      <select class="sort-selector-field" >
-        <option *ngFor="let sortBy of sortsBy"[value]="sortBy.value">
-          {{sortBy.viewValue}}
-        </option>
-      </select>
+    <select class="sort-selector-field">
+      <option *ngFor="let sortBy of sortsBy" [value]="sortBy.value">
+        {{ sortBy.viewValue }}
+      </option>
+    </select>
   </div>
 </div>
+<div class="grid-list-div">
+  <mat-grid-list cols="4" rowHeight="1:1.2" colWidth ="1:1.2" gutterSize="2.3%">
+    <mat-grid-tile>
+      <mat-grid-tile-header class="grid-header">
+        <img src="../../../assets/books/Image 10@2x.png" alt="Notfound" />
+      </mat-grid-tile-header>
+      <mat-grid-tile-footer class="grid-footer">
+        <h2>Ux Design</h2>
+        <span>by Steve Kurg</span><br />
+        <p><br /><b>Rs. 1500</b></p>
+        <div class="buttons">
+          <button class="add-cart-btn" mat-button>ADD TO BAG</button>
+          <button class="wish-list-btn" mat-button>WISHLIST</button>
+        </div>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-grid-tile-header class="grid-header">
+        <img src="../../../assets/books/Image 12@2x.png" alt="Notfound" />
+      </mat-grid-tile-header>
+      <mat-grid-tile-footer class="grid-footer">
+        <h2>Ux Design</h2>
+        <span>by Steve Kurg</span><br />
+        <p><br /><b>Rs. 1500</b></p>
+        <div class="buttons">
+          <button class="add-cart-btn" mat-button>ADD TO BAG</button>
+          <button class="wish-list-btn" mat-button>WISHLIST</button>
+        </div>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-grid-tile-header class="grid-header">
+        <img src="../../../assets/books/Image 13@2x.png" alt="Notfound" />
+      </mat-grid-tile-header>
+      <mat-grid-tile-footer class="grid-footer">
+        <h2>Ux Design</h2>
+        <span>by Steve Kurg</span><br />
+        <p><br /><b>Rs. 1500</b></p>
+        <div class="buttons">
+          <button class="add-cart-btn" mat-button>ADD TO BAG</button>
+          <button class="wish-list-btn" mat-button>WISHLIST</button>
+        </div>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-grid-tile-header class="grid-header">
+        <img src="../../../assets/books/Image 18@2x.png" alt="Notfound" />
+      </mat-grid-tile-header>
+      <mat-grid-tile-footer class="grid-footer">
+        <h2>Ux Design</h2>
+        <span>by Steve Kurg</span><br />
+        <p><br /><b>Rs. 1500</b></p>
+        <div class="buttons">
+          <button class="add-cart-btn" mat-button>ADD TO BAG</button>
+          <button class="wish-list-btn" mat-button>WISHLIST</button>
+        </div>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-grid-tile-header class="grid-header">
+        <img src="../../../assets/books/Image 14@2x.png" alt="Notfound" />
+      </mat-grid-tile-header>
+      <mat-grid-tile-footer class="grid-footer">
+        <h2>Ux Design</h2>
+        <span>by Steve Kurg</span><br />
+        <p><br /><b>Rs. 1500</b></p>
+        <div class="buttons">
+          <button class="add-cart-btn" mat-button>ADD TO BAG</button>
+          <button class="wish-list-btn" mat-button>WISHLIST</button>
+        </div>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-grid-tile-header class="grid-header">
+        <img src="../../../assets/books/Image 20@2x.png" alt="Notfound" />
+      </mat-grid-tile-header>
+      <mat-grid-tile-footer class="grid-footer">
+        <h2>Ux Design</h2>
+        <span>by Steve Kurg</span><br />
+        <p><br /><b>Rs. 1500</b></p>
+        <div class="buttons">
+          <button class="add-cart-btn" mat-button>ADD TO BAG</button>
+          <button class="wish-list-btn" mat-button>WISHLIST</button>
+        </div>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-grid-tile-header class="grid-header">
+        <img src="../../../assets/books/Image 10@2x.png" alt="Notfound" />
+      </mat-grid-tile-header>
+      <mat-grid-tile-footer class="grid-footer">
+        <h2>Ux Design</h2>
+        <span>by Steve Kurg</span><br />
+        <p><br /><b>Rs. 1500</b></p>
+        <div class="buttons">
+          <button class="add-cart-btn" mat-button>ADD TO BAG</button>
+          <button class="wish-list-btn" mat-button>WISHLIST</button>
+        </div>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-grid-tile-header class="grid-header">
+        <img src="../../../assets/books/Image 10@2x.png" alt="Notfound" />
+      </mat-grid-tile-header>
+      <mat-grid-tile-footer class="grid-footer">
+        <h2>Ux Design</h2>
+        <span>by Steve Kurg</span><br />
+        <p><br /><b>Rs. 1500</b></p>
+        <div class="buttons">
+          <button class="add-cart-btn" mat-button>ADD TO BAG</button>
+          <button class="wish-list-btn" mat-button>WISHLIST</button>
+        </div>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-grid-tile-header class="grid-header">
+        <img src="../../../assets/books/Image 10@2x.png" alt="Notfound" />
+      </mat-grid-tile-header>
+      <mat-grid-tile-footer class="grid-footer">
+        <h2>Ux Design</h2>
+        <span>by Steve Kurg</span><br />
+        <p><br /><b>Rs. 1500</b></p>
+        <div class="buttons">
+          <button class="add-cart-btn" mat-button>ADD TO BAG</button>
+          <button class="wish-list-btn" mat-button>WISHLIST</button>
+        </div>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-grid-tile-header class="grid-header">
+        <img src="../../../assets/books/Image 10@2x.png" alt="Notfound" />
+      </mat-grid-tile-header>
+      <mat-grid-tile-footer class="grid-footer">
+        <h2>Ux Design</h2>
+        <span>by Steve Kurg</span><br />
+        <p><br /><b>Rs. 1500</b></p>
+        <div class="buttons">
+          <button class="add-cart-btn" mat-button>ADD TO BAG</button>
+          <button class="wish-list-btn" mat-button>WISHLIST</button>
+        </div>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-grid-tile-header class="grid-header">
+        <img src="../../../assets/books/Image 10@2x.png" alt="Notfound" />
+      </mat-grid-tile-header>
+      <mat-grid-tile-footer class="grid-footer">
+        <h2>Ux Design</h2>
+        <span>by Steve Kurg</span><br />
+        <p><br /><b>Rs. 1500</b></p>
+        <div class="buttons">
+          <button class="add-cart-btn" mat-button>ADD TO BAG</button>
+          <button class="wish-list-btn" mat-button>WISHLIST</button>
+        </div>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-grid-tile-header class="grid-header">
+        <img src="../../../assets/books/Image 10@2x.png" alt="Notfound" />
+      </mat-grid-tile-header>
+      <mat-grid-tile-footer class="grid-footer">
+        <h2>Ux Design</h2>
+        <span>by Steve Kurg</span><br />
+        <p><br /><b>Rs. 1500</b></p>
+        <div class="buttons">
+          <button class="add-cart-btn" mat-button>ADD TO BAG</button>
+          <button class="wish-list-btn" mat-button>WISHLIST</button>
+        </div>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<app-footer></app-footer>

@@ -11,7 +11,8 @@ import { MatInputModule} from '@angular/material/input';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { MatSelectModule} from '@angular/material/select';
 import { FooterComponent } from './Components/footer/footer.component';
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,9 @@ import { FooterComponent } from './Components/footer/footer.component';
     MatToolbarModule,
     MatIconModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatGridListModule,
+    MatButtonModule
 
   ],
   providers: [],

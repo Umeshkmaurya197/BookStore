@@ -30,7 +30,7 @@ $authurName: #9d9d9d;
         h2 {
           color: $heading;
           margin: 3% 0% 0% 7%;
-          font: normal normal normal Roboto;
+          font: normal normal bold Roboto;
         }
         span {
           margin: 3% 0% 0% 7%;
@@ -102,7 +102,9 @@ $authurName: #9d9d9d;
   }
 
   .customer-form-div {
-    margin: 2% 0% 0% 0%;
+    margin: 2% 21% 0% 10%;
+    // background: #ffffff 0% 0% no-repeat padding-box;
+    border: 2px solid #dcdcdc;
     .customer-form {
       height: 100%;
       margin: 0% 0% 0% 0%;
@@ -114,7 +116,7 @@ $authurName: #9d9d9d;
       h2 {
         margin: 3% 0% 2% 4%;
         color: $heading;
-        font: normal normal normal 15px/18px roboto;
+        font: normal normal bold 15px/18px roboto;
       }
       h3 {
         // margin-top: 0%;
@@ -157,7 +159,7 @@ $authurName: #9d9d9d;
       .continue-btn {
         width: 22%;
         color: $white;
-        margin: 0% 0% 0% 78%;
+        margin: 0% 0% 3% 75%;
         border: 1px solid #707070;
         font: normal normal medium 14px/17px Roboto;
         background: #3371b5 0% 0% no-repeat padding-box;
@@ -171,9 +173,11 @@ $authurName: #9d9d9d;
 
   .order-summary-div {
     height: 250px;
+    margin: 2% 21% 0% 10%;
+    border: 2px solid #dcdcdc;
     background: #ffffff 0% 0% no-repeat padding-box;
     h2 {
-      margin: 1% 0% 0% 5%;
+      margin: 3% 0% 0% 5%;
       font-size: 16px;
       font: normal normal medium 18px/22px Lato;
     }
@@ -209,7 +213,7 @@ $authurName: #9d9d9d;
     .check-out-btn {
       width: 22%;
       color: $white;
-      margin: 0% 0% 0% 78%;
+      margin: 0% 0% 0% 75%;
       border: 1px solid #707070;
       font: normal normal medium 14px/17px Roboto;
       background: #3371b5 0% 0% no-repeat padding-box;
@@ -218,6 +222,19 @@ $authurName: #9d9d9d;
 }
 
 .expansion-panal {
-
   margin: 2% 21% 0% 10%;
+}
+
+.order-summery-opt-1 {
+  margin: 2% 21% 2% 10%;
+  padding: 0% 0% 0% 3%;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 2px solid #dcdcdc;
+}
+
+.customer-opt-1 {
+  margin: 2% 21% 2% 10%;
+  padding: 0% 0% 0% 3%;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 2px solid #dcdcdc;
 }

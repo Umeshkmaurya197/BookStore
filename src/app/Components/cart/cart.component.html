@@ -15,82 +15,100 @@
       <button class="increase-btn">+</button>
       <button class="remove-btn">Remove</button>
     </div>
-    <button mat-button class="place-order-btn">PLACE ORDER</button>
+    <button mat-button class="place-order-btn" (click)="placeOrder()">
+      PLACE ORDER
+    </button>
   </div>
-  <mat-accordion >
-    <mat-expansion-panel hideToggle class="expansion-panal">
-      <mat-expansion-panel-header>
-        <mat-panel-title><h4> Customer Details</h4></mat-panel-title>
-      </mat-expansion-panel-header>
-          <div class="customer-form-div">
-            <form class="customer-form">
-              <!-- <h2>Customer Details</h2> -->
-              <div class="input-row-div">
-                <mat-form-field class="form-input-field-1" appearance="outline">
-                  <input matInput placeholder="Name" />
-                </mat-form-field>
 
-                <mat-form-field class="form-input-field-2" appearance="outline">
-                  <input matInput placeholder="Phone number" />
-                </mat-form-field>
-              </div>
-              <div class="input-row-div">
-                <mat-form-field class="form-input-field-1" appearance="outline">
-                  <input matInput placeholder="Pincode" />
-                </mat-form-field>
+  <div class="customer-opt-1" *ngIf="myCart == false">
+    <h4>Customer Details</h4>
+  </div>
 
-                <mat-form-field class="form-input-field-2" appearance="outline">
-                  <input matInput placeholder="Locality" />
-                </mat-form-field>
-              </div>
-              <div class="input-row-div-area">
-                <mat-form-field class="form-text-area" appearance="outline">
-                  <textarea matInput placeholder="Address"></textarea>
-                </mat-form-field>
-              </div>
+  <div class="customer-opt-2" *ngIf="myCart == true">
+    <div class="customer-form-div">
+      <form class="customer-form">
+        <h2>Customer Details</h2>
+        <div class="input-row-div">
+          <mat-form-field class="form-input-field-1" appearance="outline">
+            <input matInput placeholder="Name" />
+          </mat-form-field>
 
-              <div class="input-row-div">
-                <mat-form-field class="form-input-field-1" appearance="outline">
-                  <input matInput placeholder="City/Town" />
-                </mat-form-field>
+          <mat-form-field class="form-input-field-2" appearance="outline">
+            <input matInput placeholder="Phone number" />
+          </mat-form-field>
+        </div>
+        <div class="input-row-div">
+          <mat-form-field class="form-input-field-1" appearance="outline">
+            <input matInput placeholder="Pincode" />
+          </mat-form-field>
 
-                <mat-form-field class="form-input-field-2" appearance="outline">
-                  <input matInput placeholder="Landmark" />
-                </mat-form-field>
-              </div>
+          <mat-form-field class="form-input-field-2" appearance="outline">
+            <input matInput placeholder="Locality" />
+          </mat-form-field>
+        </div>
+        <div class="input-row-div-area">
+          <mat-form-field class="form-text-area" appearance="outline">
+            <textarea matInput placeholder="Address"></textarea>
+          </mat-form-field>
+        </div>
 
-              <div class="input-row-div">
-                <h3>Type</h3>
-                <mat-radio-group aria-label="Select an option">
-                  <mat-radio-button class="type-radio-group" value="1">Home</mat-radio-button>
-                  <mat-radio-button class="type-radio-group" value="2">Work</mat-radio-button>
-                  <mat-radio-button class="type-radio-group" value="2">Other</mat-radio-button>
-                </mat-radio-group>
-              </div>
+        <div class="input-row-div">
+          <mat-form-field class="form-input-field-1" appearance="outline">
+            <input matInput placeholder="City/Town" />
+          </mat-form-field>
 
-              <button mat-button class="continue-btn" type="button">CONTINUE</button>
-            </form>
-          </div>
-    </mat-expansion-panel>
+          <mat-form-field class="form-input-field-2" appearance="outline">
+            <input matInput placeholder="Landmark" />
+          </mat-form-field>
+        </div>
 
-    <mat-expansion-panel hideToggle class="expansion-panal">
-      <mat-expansion-panel-header>
-        <mat-panel-title> <h4>Order summery </h4></mat-panel-title>
-      </mat-expansion-panel-header>
-          <div class="order-summary-div ">
-            <!-- <h2>Order summery</h2> -->
-            <div class="book-info">
-              <img src="../../../assets/books/Image 12@2x.png" alt="Not found" />
-              <div class="details-div">
-                <h2>Don't Make Me think</h2>
-                <span>by Steve Kurg</span><br />
-                <p><b>Rs. 1500</b></p>
-              </div>
-            </div>
-            <button mat-button routerLink="/order-placed" class="check-out-btn">CHECKOUT</button>
-          </div>
-    </mat-expansion-panel>
-  </mat-accordion>
+        <div class="input-row-div">
+          <h3>Type</h3>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button class="type-radio-group" value="1"
+              >Home</mat-radio-button
+            >
+            <mat-radio-button class="type-radio-group" value="2"
+              >Work</mat-radio-button
+            >
+            <mat-radio-button class="type-radio-group" value="2"
+              >Other</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+
+        <button
+          mat-button
+          class="continue-btn"
+          type="button"
+          (click)="continue()"
+        >
+          CONTINUE
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="order-summery-opt-1" *ngIf="customerDetails == false">
+    <h4>Order summary</h4>
+  </div>
+
+  <div class="order-summery-opt-2" *ngIf="customerDetails == true">
+    <div class="order-summary-div">
+      <h2>Order summery</h2>
+      <div class="book-info">
+        <img src="../../../assets/books/Image 12@2x.png" alt="Not found" />
+        <div class="details-div">
+          <h2>Don't Make Me think</h2>
+          <span>by Steve Kurg</span><br />
+          <p><b>Rs. 1500</b></p>
+        </div>
+      </div>
+      <button mat-button routerLink="/order-placed" class="check-out-btn">
+        CHECKOUT
+      </button>
+    </div>
+  </div>
 </div>
 
 <app-footer></app-footer>

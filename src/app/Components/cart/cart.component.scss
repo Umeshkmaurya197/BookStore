@@ -1,0 +1,176 @@
+$heading: #0a0102;
+$white: #ffffff;
+$authurName: #9d9d9d;
+
+.main-div {
+  height: 100%;
+  // background-color: greenyellow;
+  // border-style: dashed;
+  .my-cart-div {
+    margin: 0% 21% 0% 5%;
+    height: 250px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 2px solid #dcdcdc;
+    h2 {
+      margin: 1% 0% 0% 5%;
+      font-size: 16px;
+      font: normal normal medium 18px/22px Lato;
+    }
+    .book-info {
+      margin: 2% 50% 0% 5%;
+      // border-style: dashed;
+      display: flex;               //f
+      img {
+        // border-style: dotted;
+        height: 110px;
+        margin: 1% 0% 0% 0%;
+      }
+      .details-div {
+        // border-style: double;
+        background-color: $white;
+        width: 80%;
+        h2 {
+          color: $heading;
+          margin: 3% 0% 0% 7%;
+          font: normal normal normal Roboto;
+        }
+        span {
+          margin: 3% 0% 0% 7%;
+          font: normal normal normal 10px/12px Roboto;
+          color: $authurName;
+        }
+        p {
+          color: $heading;
+          margin: 3% 0% 0% 7%;
+          font: normal normal normal Roboto;
+        }
+      }
+    }
+    .book-quantity-div {
+      margin: 0% 50% 0% 5%;
+      padding-left: 11%;
+      // border-style: dashed;
+      display: flex;
+      height: 30px;
+      .decrease-btn {
+        background-color: $white;
+        margin: 1% 1% 0% 1%;
+        height: 20px;
+        width: 20px;
+        // border: #dbdbdb;
+        border-radius: 50%;
+        background: #fafafa 0% 0% no-repeat padding-box;
+        border: 1px solid #dbdbdb;
+      }
+      .quantity-box {
+        height: 18px;
+        width: 40px;
+        text-align: center;
+        margin: 1% 0% 0% 0%;
+        border-radius: 3px;
+        // border: #dbdbdb;
+        background: #fafafa 0% 0% no-repeat padding-box;
+        border: 1px solid #dbdbdb;
+      }
+      .increase-btn {
+        background-color: $white;
+        margin: 1% 0% 0% 1%; //
+        height: 20px;
+        width: 20px;
+        // border: #dbdbdb;
+        border-radius: 70%;
+        background: #fafafa 0% 0% no-repeat padding-box;
+        border: 1px solid #dbdbdb;
+      }
+      .remove-btn {
+        height: 20px;
+        width: 70px;
+        margin: 1% 0% 0% 7%;
+        border-style: dashed;
+        border: none;
+        border-radius: 10px;
+        background: $white 0% 0% no-repeat padding-box;
+        border: 1px solid $white;
+      }
+    }
+    .place-order-btn {
+      width: 21%;
+      color: $white;
+      margin: 0% 0% 0% 76%;
+      border: 1px solid #707070;
+      font: normal normal medium 14px/17px Lato;
+      background: #3371b5 0% 0% no-repeat padding-box;
+    }
+  }
+
+  .customer-form-div {
+    .customer-form {
+      height: 100%;
+      margin: 2% 21% 5% 10%;
+      border-style: dotted;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 2px solid #dcdcdc;
+      border-radius: 2px;
+      background-color: $white;
+      h2 {
+        margin: 3% 0% 2% 4%;
+        color: $heading;
+        font: normal normal normal 15px/18px roboto;
+      }
+      h3 {
+        // margin-top: 0%;
+        font: normal normal normal 12px/15px roboto;
+        color: #333232;
+      }
+      .type-radio-group {
+        // border-style: dashed;
+        margin: 0% 10% 0% 0%;
+      }
+      .input-row-div {
+        height: 10%;
+        margin: 0% 0% 1% 4%;
+        // border-style: dashed;
+        .form-input-field-1 {
+          width: 35%;
+          margin: 0% 0% 0% 0%;
+          .input-box-1 {
+            border-radius: 20px;
+            background-color: #ffffff;
+          }
+        }
+        .form-input-field-2 {
+          width: 35%;
+          margin: 0% 0% 0% 1.6%;
+          .input-box-2 {
+            border-radius: 20px;
+            background-color: #ffffff;
+          }
+        }
+      }
+      .input-row-div-area {
+        height: 14%;
+        // border-style: dashed;
+        margin: 0% 0% 0% 4%;
+        .form-text-area {
+          width: 71.6%;
+        }
+      }
+      .continue-btn {
+        color: $white;
+        background: #3371b5 0% 0% no-repeat padding-box;
+        border-radius: 3px;
+        border-style: dashed;
+        height: 7%;
+        width: 20%;
+        margin: 0% 0% 0% 76%;
+      }
+      .back-step-btn {
+        background-color: $white;
+        color: $white;
+      }
+    }
+  }
+
+  .order-summary-div {
+  }
+}

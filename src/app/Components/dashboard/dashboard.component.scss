@@ -41,11 +41,10 @@ $theme: #a03037;
   margin-right: 8%;
   height: 70%;
   mat-grid-list {
-    background-color: white;
+    background-color:$white;
     mat-grid-tile {
       background-color: $bookbg;
       border: 1px solid #E2E2E2;
-      border-radius: 3px;
       border-radius: 3px;
       .grid-header {
         background-color: $bookbg;

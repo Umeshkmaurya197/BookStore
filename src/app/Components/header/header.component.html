@@ -1,14 +1,14 @@
 <mat-toolbar class="header">
-  <img src="../../../assets/icon/education.svg" alt="Logo not found" />
-  <span> Book Store </span>
+  <img routerLink="/dashboard" src="../../../assets/icon/education.svg" alt="Logo not found" />
+  <span routerLink="/dashboard" > Book Store </span>
   <div class="form-div">
     <form class="search-input-box">
       <input class="search-input-box" type="search" placeholder="Search...">
     </form>
   </div>
   <div class="cart-div">
-    <span class="cart-text">Cart</span>
-    <img class="cart-icon" src="../../../assets/icon/supermarket.svg" alt="Logo Not found" />
+    <span class="cart-text" routerLink="/cart">Cart</span>
+    <img class="cart-icon" routerLink="/cart" src="../../../assets/icon/supermarket.svg" alt="Logo Not found" />
     <p class="cart-count">1</p>
   </div>
 </mat-toolbar>

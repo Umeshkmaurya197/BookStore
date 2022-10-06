@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   sortsBy: SortBy[] = [
     {value: '',viewValue:'Sort by relevance'},
     {value: 'Price : High to Low',viewValue:'Price : High to Low'},
-    {value: 'Price : Low to High',viewValue:'Price : Low to Heigh'},
+    {value: 'Price : Low to High',viewValue:'Price : Low to High'},
     {value: 'Newest Arrivals',viewValue:'Newest Arrivals'},
   ];
   constructor() { }

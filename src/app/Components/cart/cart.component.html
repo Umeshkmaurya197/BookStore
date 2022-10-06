@@ -1,0 +1,133 @@
+<div class="main-div">
+  <mat-stepper orientation="vertical">
+    <mat-step>
+      <ng-template matStepLabel>My Cart</ng-template>
+      <ng-template matStepContent>
+        <div class="my-cart-div">
+          <h2>My Cart (2)</h2>
+          <div class="book-info">
+            <img src="../../../assets/books/Image 12@2x.png" alt="Not found" />
+            <div class="details-div">
+              <h2>Don't Make Me think</h2>
+              <span>by Steve Kurg</span><br />
+              <p><b>Rs. 1500</b></p>
+            </div>
+          </div>
+          <div class="book-quantity-div">
+            <button class="decrease-btn">-</button>
+            <input class="quantity-box" type="text" value="1" />
+            <button class="increase-btn">+</button>
+            <button class="remove-btn">Remove</button>
+          </div>
+          <button mat-button matStepperNext class="place-order-btn">
+            PLACE ORDER
+          </button>
+        </div>
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Customer Details</ng-template>
+      <ng-template matStepContent>
+        <div class="customer-form-div">
+          <form class="customer-form">
+            <h2>Customer Details</h2>
+            <div class="input-row-div">
+              <mat-form-field class="form-input-field-1" appearance="outline">
+                <input matInput placeholder="Name" />
+              </mat-form-field>
+              <mat-form-field class="form-input-field-2" appearance="outline">
+                <input matInput placeholder="Phone number" />
+              </mat-form-field>
+            </div>
+            <div class="input-row-div">
+              <mat-form-field class="form-input-field-1" appearance="outline">
+                <input matInput placeholder="Pincode" />
+              </mat-form-field>
+
+              <mat-form-field class="form-input-field-2" appearance="outline">
+                <input matInput placeholder="Locality" />
+              </mat-form-field>
+            </div>
+            <div class="input-row-div-area">
+              <mat-form-field class="form-text-area" appearance="outline">
+                <textarea matInput placeholder="Address"></textarea>
+              </mat-form-field>
+            </div>
+
+            <div class="input-row-div">
+              <mat-form-field class="form-input-field-1" appearance="outline">
+                <input matInput placeholder="City/Town" />
+              </mat-form-field>
+
+              <mat-form-field class="form-input-field-2" appearance="outline">
+                <input matInput placeholder="Landmark" />
+              </mat-form-field>
+            </div>
+
+            <div class="input-row-div">
+              <h3>Type</h3>
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button class="type-radio-group" value="1"
+                  >Home</mat-radio-button
+                >
+                <mat-radio-button class="type-radio-group" value="2"
+                  >Work</mat-radio-button
+                >
+                <mat-radio-button class="type-radio-group" value="2"
+                  >Other</mat-radio-button
+                >
+              </mat-radio-group>
+            </div>
+
+            <button
+              mat-button
+              class="back-step-btn"
+              type="button"
+              matStepperPrevious
+            >
+              .
+            </button>
+            <button
+              mat-button
+              class="continue-btn"
+              type="button"
+              matStepperNext
+            >
+              CONTINUE
+            </button>
+          </form>
+        </div>
+
+        <!-- <button mat-button matStepperNext>Next</button> -->
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Order summery</ng-template>
+      <div class="my-cart-div">
+        <h2>Order summery</h2>
+        <div class="book-info">
+          <img src="../../../assets/books/Image 12@2x.png" alt="Not found" />
+          <div class="details-div">
+            <h2>Don't Make Me think</h2>
+            <span>by Steve Kurg</span><br />
+            <p><b>Rs. 1500</b></p>
+          </div>
+        </div>
+        <!-- <div class="book-quantity-div">
+          <button class="decrease-btn">-</button>
+          <input class="quantity-box" type="text" value="1" />
+          <button class="increase-btn">+</button>
+          <button class="remove-btn">Remove</button>
+        </div> -->
+        <button mat-button  routerLink='/order-placed' matStepperNext class="place-order-btn">
+          CHECKOUT
+        </button>
+      </div>
+      <!-- <button mat-button matStepperPrevious>Back</button> -->
+    </mat-step>
+  </mat-stepper>
+</div>
+<app-footer></app-footer>
+
+<!-- <div class="order-summary-div"></div>
+-->

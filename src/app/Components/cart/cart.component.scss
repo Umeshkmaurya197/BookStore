@@ -4,10 +4,8 @@ $authurName: #9d9d9d;
 
 .main-div {
   height: 100%;
-  // background-color: greenyellow;
-  // border-style: dashed;
   .my-cart-div {
-    margin: 0% 21% 0% 5%;
+    margin: 2% 21% 2% 10%;
     height: 250px;
     background: #ffffff 0% 0% no-repeat padding-box;
     border: 2px solid #dcdcdc;
@@ -19,7 +17,7 @@ $authurName: #9d9d9d;
     .book-info {
       margin: 2% 50% 0% 5%;
       // border-style: dashed;
-      display: flex;               //f
+      display: flex; //f
       img {
         // border-style: dotted;
         height: 110px;
@@ -104,12 +102,13 @@ $authurName: #9d9d9d;
   }
 
   .customer-form-div {
+    margin: 2% 0% 0% 0%;
     .customer-form {
       height: 100%;
-      margin: 2% 21% 5% 10%;
-      border-style: dotted;
+      margin: 0% 0% 0% 0%;
+      // border-style: dotted;
       background: #ffffff 0% 0% no-repeat padding-box;
-      border: 2px solid #dcdcdc;
+      // border: 2px solid #dcdcdc;
       border-radius: 2px;
       background-color: $white;
       h2 {
@@ -156,13 +155,12 @@ $authurName: #9d9d9d;
         }
       }
       .continue-btn {
+        width: 22%;
         color: $white;
+        margin: 0% 0% 0% 78%;
+        border: 1px solid #707070;
+        font: normal normal medium 14px/17px Roboto;
         background: #3371b5 0% 0% no-repeat padding-box;
-        border-radius: 3px;
-        border-style: dashed;
-        height: 7%;
-        width: 20%;
-        margin: 0% 0% 0% 76%;
       }
       .back-step-btn {
         background-color: $white;
@@ -172,5 +170,54 @@ $authurName: #9d9d9d;
   }
 
   .order-summary-div {
+    height: 250px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    h2 {
+      margin: 1% 0% 0% 5%;
+      font-size: 16px;
+      font: normal normal medium 18px/22px Lato;
+    }
+    .book-info {
+      margin: 2% 50% 0% 5%;
+      display: flex;
+      img {
+        // border-style: dotted;
+        height: 110px;
+        margin: 1% 0% 0% 0%;
+      }
+      .details-div {
+        // border-style: double;
+        background-color: $white;
+        width: 80%;
+        h2 {
+          color: $heading;
+          margin: 3% 0% 0% 7%;
+          font: normal normal normal Roboto;
+        }
+        span {
+          margin: 3% 0% 0% 7%;
+          font: normal normal normal 10px/12px Roboto;
+          color: $authurName;
+        }
+        p {
+          color: $heading;
+          margin: 3% 0% 0% 7%;
+          font: normal normal normal Roboto;
+        }
+      }
+    }
+    .check-out-btn {
+      width: 22%;
+      color: $white;
+      margin: 0% 0% 0% 78%;
+      border: 1px solid #707070;
+      font: normal normal medium 14px/17px Roboto;
+      background: #3371b5 0% 0% no-repeat padding-box;
+    }
   }
+}
+
+.expansion-panal {
+
+  margin: 2% 21% 0% 10%;
 }

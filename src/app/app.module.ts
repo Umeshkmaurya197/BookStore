@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { OrderPlacedComponent } from './Components/order-placed/order-placed.component';
 
+import { MatExpansionModule } from '@angular/material/expansion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { OrderPlacedComponent } from './Components/order-placed/order-placed.com
     MatStepperModule,
     MatFormFieldModule,
     MatRadioModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,36 @@
+.main-div {
+  // border-style: dashed;
+  .icon-div {
+    margin: 4% 0% 0% 43%;
+  }
+  h1 {
+    margin: -8% 0% 6% 36%;
+  }
+  .success-order-placed {
+    margin: 0% 35% 2% 36%;
+    text-align: center;
+    // border-style: dashed;
+  }
+  .contact-table {
+    // border-style: dashed;
+    background: #fafafa 0% 0% no-repeat padding-box;
+    border: 1px solid #dcdcdc;
+    margin: 0% 20% 0% 25%;
+    tr {
+      background: #fafafa 0% 0% no-repeat padding-box;
+      border: 1px solid #dcdcdc;
+      th {
+        // border-style: dashed;
+        background: #fafafa 0% 0% no-repeat padding-box;
+        // border: 1px solid #dcdcdc;
+      }
+      td {
+        background: #ffffff 0% 0% no-repeat padding-box;
+        border: 1px solid #dcdcdc;
+        height: 70px;
+        text-align: center;
+        // border-style: dotted;
+      }
+    }
+  }
+}

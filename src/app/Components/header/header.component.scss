@@ -35,18 +35,30 @@ $white: #ffffff;
       }
     }
   }
+  .login-icon {
+    height: 30px;
+    margin: -1% 2% 0% 0%;
+
+    img {
+      height: 50px;
+    }
+  }
   .cart-div {
     display: flex;
     .cart-text {
-      margin-right: 10px;
-      margin-top: 14px;
+      font: normal normal normal 12px/13px Roboto;
+      letter-spacing: 0.45px;
+      color: #ffffff;
+      // margin-right: 10px;
+      // margin-top: 14px;
+      margin:68% 0% 0% -30% ;
     }
     .cart-count {
       color: $theme;
       background-color: $white;
       padding: 10px;
       margin-bottom: 16px;
-      margin-left: -6px;
+      margin-left: -11px;
       opacity: 50%; //
       border-radius: 100%;
       font: normal normal bold 13px/5px roboto;

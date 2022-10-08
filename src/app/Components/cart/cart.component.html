@@ -10,14 +10,13 @@
       </div>
     </div>
     <div class="book-quantity-div">
-      <button class="decrease-btn">-</button>
-      <input class="quantity-box" type="text" value="1" />
-      <button class="increase-btn">+</button>
-      <button class="remove-btn">Remove</button>
+      <button class="decrease-btn" (click)="decrease()">-</button>
+      <input class="quantity-box" type="text" [value]="quantity" />
+      <button class="increase-btn" (click)="increase()">+</button>
+      <button class="remove-btn" (click)="removeQuantity()">Remove</button>
     </div>
-    <button mat-button class="place-order-btn" (click)="placeOrder()">
-      PLACE ORDER
-    </button>
+    <button mat-button class="place-order-btn" *ngIf="quantity>=1" (click)="placeOrder()">PLACE ORDER</button>
+    <!-- <button mat-button class="place-order-btn" #place_btn  disabled (click)="placeOrder()">PLACE ORDER</button> -->
   </div>
 
   <div class="customer-opt-1" *ngIf="myCart == false">

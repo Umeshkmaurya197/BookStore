@@ -18,8 +18,10 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { OrderPlacedComponent } from './Components/order-placed/order-placed.component';
-
+import {MatTabsModule} from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { LoginComponent } from './Components/login/login.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,11 +30,13 @@ import { MatExpansionModule } from '@angular/material/expansion';
     FooterComponent,
     CartComponent,
     OrderPlacedComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatToolbarModule,
     MatIconModule,
     MatInputModule,
@@ -43,6 +47,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatFormFieldModule,
     MatRadioModule,
     MatExpansionModule,
+    MatTabsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

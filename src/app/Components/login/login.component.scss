@@ -1,0 +1,197 @@
+.main-div {
+  margin: 0% 0% 0% 0%;
+  // width: 100%;
+  height: 768px;
+  background-color: #a1a0a0;
+  padding: 4% 0% 0% 13%;
+  // background: #000000 0% 0% no-repeat padding-box;
+  // opacity: 0.31;
+  .img-div {
+    // border-style: dashed;
+    height: fit-content;
+    width: max-content;
+    border-radius: 30px;
+    padding: 3% 5% 3% 5%;
+    margin: 0% 0% 0% 0%;
+    background: #f5f5f5 0% 0% no-repeat padding-box;
+    border-radius: 21px;
+    .online-shop-img {
+      height: 300px;
+      opacity: 80%;
+      border-radius: 50%;
+      margin: 0% 0% 10% 0%;
+    }
+    span {
+      margin: 0% 0% 0% 10%;
+      text-align: left;
+      font: normal normal bold 18px/24px Roboto;
+      letter-spacing: 0px;
+      color: #0a0102;
+      text-transform: uppercase;
+      // opacity: 1;
+    }
+  }
+  .login-signup-tabs {
+    border-style: dashed;
+    height: 515px;
+    width: 500px;
+    margin: -42.5% 0% 0% 34%;
+    border-radius: 31px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 15px #00000029;
+    border: 1px solid #e4e4e4;
+    border-radius: 6px;
+    opacity: 1;
+    .email-div {
+      // border-style: dashed;
+      margin: 0% 10% 0% 10%;
+      .input-label {
+        font: normal normal normal 17px/13px Roboto;
+        letter-spacing: 0px;
+        color: #0a0102;
+        text-transform: capitalize;
+        opacity: 1;
+      }
+      .email-input {
+        width: 100%;
+        background: #ffffff 0% 0% no-repeat padding-box;
+        // border: 1px solid #e2e2e2;
+        border-radius: 2px;
+      }
+    }
+    .password-div {
+      // border-style: dashed;
+      margin: 0% 10% 0% 10%;
+      .password-input {
+        width: 100%;
+        background: #ffffff 0% 0% no-repeat padding-box;
+        // border: 1px solid #e2e2e2;
+        border-radius: 2px;
+        background: #ffffff 0% 0% no-repeat padding-box;
+        // border: 1px solid #a03037;
+        // border-radius: 2px;
+      }
+    }
+    span {
+      // border-style: dashed;
+      width: 100%;
+      margin: 0% 10% 0% 62.5%;
+    }
+    .login-btn {
+      height: 45px;
+      width: 80%;
+      margin: 10% 10% 0% 10%;
+      border-style: dotted;
+      color: white;
+      background: #a03037 0% 0% no-repeat padding-box;
+      border-radius: 3px;
+      opacity: 1;
+      font: normal normal normal 15px/20px Roboto;
+      letter-spacing: 0px;
+      color: #ffffff;
+    }
+    .or-div {
+      display: flex;
+      // margin: 0%
+      span {
+        font: normal normal bold 14px/18px Meiryo UI;
+        letter-spacing: 0px;
+        color: #343434;
+        text-transform: uppercase;
+        margin: 4% 0% 0% 47.5%;
+      }
+    }
+    .fb-signin-btn {
+      border-style: dashed;
+      width: 35%;
+      margin: 4% 0% 0% 10%;
+      border-radius: 3px;
+      opacity: 1;
+      color: white;
+      background: #4266b2 0% 0% no-repeat padding-box;
+    }
+    .google-signin-btn {
+      border-style: dashed;
+      width: 35%;
+      margin: 4% 0% 0% 10%;
+      background: #F5F5F5 0% 0% no-repeat padding-box;
+      border: 1px solid #E4E4E4;
+      border-radius: 3px;
+
+    }
+
+    .signup-form {
+      height: 463px;
+      width: 100%;
+      .input-div {
+        height: 19%;
+        // border-style: dashed;
+        margin: 0% 10% 0% 10%;
+        .input-field-box {
+          width: 100%;
+        }
+      }
+      .signup-btn {
+        width: 80%;
+        height: 10%;
+        // border-style: dashed;
+        margin: 5% 0% 0% 10%;
+        color: #ffffff;
+        background: #a03037 0% 0% no-repeat padding-box;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+// .main-div {
+//   border-style: dashed;
+//   height: 100%;
+//   background: #b3b0b0 no-repeat padding-box;
+//   opacity: 90%;
+//   .img-div {
+//     border-style: dotted;
+//     margin: 7% 30% 0% 17%;
+//     height: 60%;
+//     width: 27%;
+//     opacity: 100%;
+//     padding: 3% 0% 0% 3%;
+//     background: #f5f5f5 0% 0% no-repeat padding-box;
+//     border-radius: 21px;
+//     .online-shop-img {
+//       margin: 0% 0% 6% 0%;
+//       height: 300px;
+//       border-radius: 50%;
+//     }
+//     span {
+//       margin: 14% 0% 0% 13%;
+//       font: normal normal bold 18px/24px Roboto;
+//       letter-spacing: 0px;
+//       color: #0a0102;
+//       text-transform: uppercase;
+//     }
+//   }
+//   .login-signup-tabs {
+//     opacity: 100%;
+//     margin: -35% 0% 0% 46%;
+//     height: 77%;
+//     width: 40%;
+//     border-style: dashed;
+//     background: #ffffff 0% 0% no-repeat padding-box;
+//     box-shadow: 0px 5px 15px #00000029;
+//     border: 1px solid #e4e4e4;
+//     border-radius: 8px;
+//     .tab-group{
+//       width: 70%;
+//         border-style: dashed;
+//         color: aqua;
+//         background-color: blue;
+//         .login-tab{
+//           text-align: center;
+
+//         }
+
+//     }
+
+//   }
+// }

@@ -1,3 +1,4 @@
+<app-header [cartCount]="0"></app-header>
 <div class="main-div">
   <div class="img-div">
     <img
@@ -15,7 +16,7 @@
           <div class="email-div">
             <mat-label class="input-label">Email Id</mat-label><br />
             <mat-form-field class="email-input" appearance="outline">
-              <input matInput placeholder="Ex. abc@gmail.com" />
+              <input matInput placeholder="Ex. abc@gmail.com" [(ngModel)]="login.email" [ngModelOptions]="{standalone: true}"/>
             </mat-form-field>
           </div>
           <div class="password-div" *ngIf="eyeClick == false">
@@ -24,16 +25,14 @@
               <input
                 matInput
                 type="text"
-                [(ngModel)]="inputPassword"
+                [(ngModel)]="login.password"
                 placeholder="Ex. Abc123@!$"
-                [ngModelOptions]="{ standalone: true }"
+                [ngModelOptions]="{standalone: true}"
               />
-              <mat-icon matSuffix (click)="onEyeClick()"
-                ><svg
-                  class="fontawesomesvg"
+              <mat-icon matSuffix (click)="onEyeClick()" >
+                <svg class="fontawesomesvg"
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 576 512"
-                >
+                  viewBox="0 0 576 512">
                   <!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                   <path
                     d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"
@@ -49,8 +48,8 @@
                 matInput
                 type="password"
                 placeholder="Ex. Abc123@!$"
-                [(ngModel)]="inputPassword"
-                [ngModelOptions]="{ standalone: true }"
+                [(ngModel)]="login.password"
+                [ngModelOptions]="{standalone: true}"
               />
               <mat-icon matSuffix (click)="onEyeClick()"
                 ><svg
@@ -67,7 +66,7 @@
             </mat-form-field>
           </div>
           <span>Forgot Password ?</span>
-          <button mat-button class="login-btn">Login</button>
+          <button mat-button class="login-btn" (click)="userLogin()">Login</button>
           <div class="or-div">
             <span>OR</span>
           </div>
@@ -82,32 +81,32 @@
           <div class="input-div">
             <mat-label class="input-label">Full Name</mat-label><br />
             <mat-form-field class="input-field-box" appearance="outline">
-              <input matInput />
+              <input matInput  [(ngModel)]="signup.fullName" [ngModelOptions]="{standalone: true}"/>
             </mat-form-field>
           </div>
           <div class="input-div">
             <mat-label class="input-label">Email Id</mat-label><br />
             <mat-form-field class="input-field-box" appearance="outline">
-              <input matInput />
+              <input matInput [(ngModel)]="signup.email" [ngModelOptions]="{standalone: true}" />
             </mat-form-field>
           </div>
           <div class="input-div">
             <mat-label class="input-label">Password</mat-label><br />
             <mat-form-field class="input-field-box" appearance="outline">
-              <input matInput />
+              <input matInput [(ngModel)]="signup.password" [ngModelOptions]="{standalone: true}"/>
             </mat-form-field>
           </div>
           <div class="input-div">
             <mat-label class="input-label">Mobile Number</mat-label><br />
             <mat-form-field class="input-field-box" appearance="outline">
-              <input matInput />
+              <input matInput [(ngModel)]="signup.mobileNumber" [ngModelOptions]="{standalone: true}"/>
             </mat-form-field>
           </div>
-          <button mat-button class="signup-btn">Signup</button>
+          <button mat-button class="signup-btn" (click)="userSignup()">Signup</button>
         </form>
       </mat-tab>
     </mat-tab-group>
   </div>
 </div>
 
-<app-footer></app-footer>
+

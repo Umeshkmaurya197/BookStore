@@ -1,22 +1,22 @@
+<app-header [cartCount]="cartBookCount"></app-header>
 <div class="main-div">
   <div class="my-cart-div">
-    <h2>My Cart (2)</h2>
-    <div class="book-info">
-      <img src="../../../assets/books/Image 12@2x.png" alt="Not found" />
+    <h2>My Cart({{cartBookList.length}})</h2>
+    <div class="book-info" *ngFor="let cartBook of cartBookList ; let i = index" >
+      <img [src]="cartBook.bookImg" alt="Not found" />
       <div class="details-div">
-        <h2>Don't Make Me think</h2>
-        <span>by Steve Kurg</span><br />
-        <p><b>Rs. 1500</b></p>
+        <h2>{{cartBook.bookName}}</h2>
+        <span>{{cartBook.authorName}}</span><br />
+        <p><b>Rs.{{cartBook.price * userCart.quantity[i]}}</b></p>
+        <div class="book-quantity-div">
+          <button class="decrease-btn" (click)="decrease(cartBook.bookId)">-</button>
+          <input class="quantity-box" type="text" disabled [value]="userCart.quantity[i]" />
+          <button class="increase-btn" (click)="increase(cartBook.bookId)">+</button>
+          <button class="remove-btn" (click)="removeQuantity(cartBook.bookId)">Remove</button>
+        </div>
       </div>
     </div>
-    <div class="book-quantity-div">
-      <button class="decrease-btn" (click)="decrease()">-</button>
-      <input class="quantity-box" type="text" [value]="quantity" />
-      <button class="increase-btn" (click)="increase()">+</button>
-      <button class="remove-btn" (click)="removeQuantity()">Remove</button>
-    </div>
-    <button mat-button class="place-order-btn" *ngIf="quantity>=1" (click)="placeOrder()">PLACE ORDER</button>
-    <!-- <button mat-button class="place-order-btn" #place_btn  disabled (click)="placeOrder()">PLACE ORDER</button> -->
+    <button mat-button class="place-order-btn"  (click)="placeOrder()">PLACE ORDER</button>
   </div>
 
   <div class="customer-opt-1" *ngIf="myCart == false">
@@ -29,61 +29,48 @@
         <h2>Customer Details</h2>
         <div class="input-row-div">
           <mat-form-field class="form-input-field-1" appearance="outline">
-            <input matInput placeholder="Name" />
+            <input matInput placeholder="Name" [(ngModel)]="userData.fullName" [ngModelOptions]="{standalone: true}"/>
           </mat-form-field>
 
           <mat-form-field class="form-input-field-2" appearance="outline">
-            <input matInput placeholder="Phone number" />
+            <input matInput placeholder="Phone number" [(ngModel)]="userData.mobileNumber" [ngModelOptions]="{standalone: true}"/>
           </mat-form-field>
         </div>
         <div class="input-row-div">
           <mat-form-field class="form-input-field-1" appearance="outline">
-            <input matInput placeholder="Pincode" />
+            <input matInput placeholder="Pin Code" [(ngModel)]="userPlaceOrder.pin" [ngModelOptions]="{standalone: true}"/>
           </mat-form-field>
 
           <mat-form-field class="form-input-field-2" appearance="outline">
-            <input matInput placeholder="Locality" />
+            <input matInput placeholder="Locality" [(ngModel)]="userPlaceOrder.locality" [ngModelOptions]="{standalone: true}"/>
           </mat-form-field>
         </div>
         <div class="input-row-div-area">
           <mat-form-field class="form-text-area" appearance="outline">
-            <textarea matInput placeholder="Address"></textarea>
+            <textarea matInput placeholder="Address" [(ngModel)]="userPlaceOrder.address" [ngModelOptions]="{standalone: true}"></textarea>
           </mat-form-field>
         </div>
 
         <div class="input-row-div">
           <mat-form-field class="form-input-field-1" appearance="outline">
-            <input matInput placeholder="City/Town" />
+            <input matInput placeholder="City/Town" [(ngModel)]="userPlaceOrder.city" [ngModelOptions]="{standalone: true}" />
           </mat-form-field>
 
           <mat-form-field class="form-input-field-2" appearance="outline">
-            <input matInput placeholder="Landmark" />
+            <input matInput placeholder="Landmark" [(ngModel)]="userPlaceOrder.landmark" [ngModelOptions]="{standalone: true}"/>
           </mat-form-field>
         </div>
 
         <div class="input-row-div">
           <h3>Type</h3>
-          <mat-radio-group aria-label="Select an option">
-            <mat-radio-button class="type-radio-group" value="1"
-              >Home</mat-radio-button
-            >
-            <mat-radio-button class="type-radio-group" value="2"
-              >Work</mat-radio-button
-            >
-            <mat-radio-button class="type-radio-group" value="2"
-              >Other</mat-radio-button
-            >
+          <mat-radio-group aria-label="Select an option" [(ngModel)]="userPlaceOrder.type" [ngModelOptions]="{standalone: true}">
+            <mat-radio-button class="type-radio-group" value="Home">Home</mat-radio-button>
+            <mat-radio-button class="type-radio-group" value="Work">Work</mat-radio-button>
+            <mat-radio-button class="type-radio-group" value="Other">Other</mat-radio-button>
           </mat-radio-group>
         </div>
 
-        <button
-          mat-button
-          class="continue-btn"
-          type="button"
-          (click)="continue()"
-        >
-          CONTINUE
-        </button>
+        <button mat-button class="continue-btn" type="button"(click)="continue()">CONTINUE</button>
       </form>
     </div>
   </div>
@@ -92,22 +79,22 @@
     <h4>Order summary</h4>
   </div>
 
-  <div class="order-summery-opt-2" *ngIf="customerDetails == true">
+  <div class="order-summery-opt-2"  *ngIf="customerDetails == true">
     <div class="order-summary-div">
       <h2>Order summery</h2>
-      <div class="book-info">
-        <img src="../../../assets/books/Image 12@2x.png" alt="Not found" />
+      <div class="book-info" *ngFor="let cartBook of cartBookList; let i = index">
+        <img [src]="cartBook.bookImg" alt="Not found" />
         <div class="details-div">
-          <h2>Don't Make Me think</h2>
-          <span>by Steve Kurg</span><br />
-          <p><b>Rs. 1500</b></p>
+          <h2>{{cartBook.bookName}}</h2>
+          <span>{{cartBook.authorName}}</span><br />
+          <p><b>Rs.{{cartBook.price * userCart.quantity[i]}}</b></p>
         </div>
       </div>
-      <button mat-button routerLink="/order-placed" class="check-out-btn">
-        CHECKOUT
-      </button>
+      <!-- <p><input type="text" disabled /></p> -->
+
+      <button mat-button  class="check-out-btn" (click)="checkoutBtn()">CHECKOUT</button>
     </div>
   </div>
 </div>
-
+<!-- routerLink="/order-placed" -->
 <app-footer></app-footer>

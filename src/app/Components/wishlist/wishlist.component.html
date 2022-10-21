@@ -1,0 +1,20 @@
+<!-- <div class="main-div">
+  <div class="my-cart-div">
+    <h2>My Cart({{bookWishList.length}})</h2>
+    <div class="book-info" *ngFor="let cartBook of bookWishList ; let i = index" >
+      <img [src]="cartBook.bookImg" alt="Not found" />
+      <div class="details-div">
+        <h2>{{cartBook.bookName}}</h2>
+        <span>{{cartBook.authorName}}</span><br />
+        <p><b>Rs.{{cartBook.price * userCart.quantity[i]}}</b></p>
+        <div class="book-quantity-div">
+          <button class="decrease-btn" (click)="decrease(cartBook.bookId)">-</button>
+          <input class="quantity-box" type="text" disabled [value]="userCart.quantity[i]" />
+          <button class="increase-btn" (click)="increase(cartBook.bookId)">+</button>
+          <button class="remove-btn" (click)="removeQuantity(cartBook.bookId)">Remove</button>
+        </div>
+      </div>
+    </div>
+    <button mat-button class="place-order-btn"  (click)="placeOrder()">PLACE ORDER</button>
+  </div>
+</div> -->

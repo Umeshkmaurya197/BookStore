@@ -7,4 +7,8 @@ $White:#FFFFFF;
   color: $White;
   background-color: $footer;
   font: normal normal medium 12px/15px Lato;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }

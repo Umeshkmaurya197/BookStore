@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -18,10 +19,18 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { OrderPlacedComponent } from './Components/order-placed/order-placed.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { LoginComponent } from './Components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     CartComponent,
     OrderPlacedComponent,
     LoginComponent,
+    WishlistComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,8 +57,14 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatRadioModule,
     MatExpansionModule,
-    MatTabsModule
-
+    MatTabsModule,
+    HttpClientModule,
+    MatMenuModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
+    NgxPaginationModule,
+    // Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

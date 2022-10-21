@@ -1,18 +1,69 @@
 <mat-toolbar class="header">
-  <img routerLink="/dashboard" src="../../../assets/icon/education.svg" alt="Logo not found" />
-  <span routerLink="/dashboard" > Book Store </span>
+  <img routerLink="/dashboard" src="../../../assets/icon/education.svg" alt="Logo not found"/>
+  <span routerLink="/dashboard"> Book Store </span>
   <div class="form-div">
     <form class="search-input-box">
-      <input class="search-input-box" type="search" placeholder="Search...">
+      <input class="search-input-box" type="search" [(ngModel)]="enteredSearchValue" (input)="onSearchTextChanged()" placeholder="Search..." [ngModelOptions]="{standalone: true}" />
     </form>
   </div>
-  <div class="login-icon">
-          <img routerLink="/login" src="../../../assets/icon/profileIcon.png" alt="Notfound">
+  <div class="login-icon" mat-button [matMenuTriggerFor]="belowMenu">
+    <mat-icon  >person_outline</mat-icon>
+    <p  *ngIf="token">{{userModel.fullName}}</p>
+    <p  *ngIf="!token">&nbsp;&nbsp;Profile</p>
   </div>
+      <mat-menu class="profile-box"  #belowMenu="matMenu" yPosition="below">
+        <div *ngIf="!token">
+          <h5 style="margin: 3% 0% 0% 6%">Welcome</h5>
+          <p style="text-align: left; margin: 5% 10% 0% 6%;font: normal normal normal 14px/16px Roboto;letter-spacing: 0px;color: #a3a0a0;opacity: 1;">
+            To acsess account and manage orders
+          </p>
+          <button mat-button style="border: 1px solid #a03037;border-radius: 3%;margin: 3% 0% 6% 10%;width: 60%;border-radius: 2px;" routerLink="/login">
+            <span style="text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #a03037;opacity: 1;">
+              Login/Signup
+            </span>
+          </button>
+          <hr style="margin: 0% 7% 0% 7%;border: 1px solid #e2e2e2;opacity: 1;"/>
+          <button mat-button style="height: 90%;width: 100%;text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">
+            <mat-icon style="margin: 3% 0% 6% 3%">assignment_turned_in</mat-icon>
+            <span style="margin: 3% 0% 0% 3%">My Order</span>
+          </button>
+          <br/>
+          <button mat-button style="height: 100%;width: 100%;text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">
+            <mat-icon style="margin: 3% 0% 6% 3%">favorite_border</mat-icon
+            ><span style="margin: 3% 0% 0% 3%" routerLink="/login">Wishlist</span>
+          </button>
+        </div>
+
+        <div *ngIf="token">
+          <h4 style="margin: 3% 0% 0% 6%">Hello {{userModel.fullName}},</h4><br>
+          <button mat-button style="height: 90%;width: 100%;text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">
+            <mat-icon style="margin: 3% 0% 6% 3%">person_outline</mat-icon>
+            <span style="margin: 3% 0% 0% 3%">Profile</span>
+          </button>
+          <button mat-button style="height: 90%;width: 100%;text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">
+            <mat-icon style="margin: 3% 0% 6% 3%">assignment_turned_in</mat-icon>
+            <span style="margin: 3% 0% 0% 3%">My Order</span>
+          </button>
+          <br/>
+          <button mat-button style="height: 100%;width: 100%;text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">
+            <mat-icon style="margin: 3% 0% 6% 3%">favorite_border</mat-icon
+            ><span style="margin: 3% 0% 0% 3%" routerLink="/wishlist">Wishlist</span>
+          </button>
+          <button mat-button style="border: 1px solid #a03037;border-radius: 3%;margin: 3% 0% 6% 10%;width: 60%;border-radius: 2px;" (click)="logout()">
+            <span style="text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #a03037;opacity: 1;">
+              Logout
+            </span>
+          </button>
+        </div>
+    </mat-menu>
+
+
   <div class="cart-div">
-    <img class="cart-icon" routerLink="/cart" src="../../../assets/icon/supermarket.svg" alt="Logo Not found" />
+    <img
+      class="cart-icon"routerLink="/cart"src="../../../assets/icon/supermarket.svg"alt="Logo Not found"/>
     <span class="cart-text" routerLink="/cart">Cart</span>
-    <p class="cart-count">1</p>
+    <p class="cart-count1" *ngIf="cartCount == 0">{{ cartCount }}</p>
+    <p class="cart-count" *ngIf="cartCount >= 1">{{ cartCount }}</p>
   </div>
 </mat-toolbar>
 <router-outlet></router-outlet>

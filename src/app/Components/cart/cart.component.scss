@@ -6,11 +6,11 @@ $authurName: #9d9d9d;
   height: 100%;
   .my-cart-div {
     margin: 2% 21% 2% 10%;
-    height: 250px;
+    height: fit-content;
     background: #ffffff 0% 0% no-repeat padding-box;
     border: 2px solid #dcdcdc;
     h2 {
-      margin: 1% 0% 0% 5%;
+      margin: 3% 0% 0% 5%;
       font-size: 16px;
       font: normal normal medium 18px/22px Lato;
     }
@@ -21,12 +21,14 @@ $authurName: #9d9d9d;
       img {
         // border-style: dotted;
         height: 110px;
+        width: 100px;
         margin: 1% 0% 0% 0%;
       }
       .details-div {
         // border-style: double;
         background-color: $white;
         width: 80%;
+        margin-left: 1%;
         h2 {
           color: $heading;
           margin: 3% 0% 0% 7%;
@@ -45,8 +47,8 @@ $authurName: #9d9d9d;
       }
     }
     .book-quantity-div {
-      margin: 0% 50% 0% 5%;
-      padding-left: 11%;
+      margin: 5% 10% 0% 0%;
+      padding-left: 6%;
       // border-style: dashed;
       display: flex;
       height: 30px;
@@ -94,7 +96,7 @@ $authurName: #9d9d9d;
     .place-order-btn {
       width: 21%;
       color: $white;
-      margin: 0% 0% 0% 76%;
+      margin: 0% 0% 3% 76%;
       border: 1px solid #707070;
       font: normal normal medium 14px/17px Lato;
       background: #3371b5 0% 0% no-repeat padding-box;
@@ -102,7 +104,7 @@ $authurName: #9d9d9d;
   }
 
   .customer-form-div {
-    margin: 2% 21% 0% 10%;
+    margin: 2% 21% 2% 10%;
     // background: #ffffff 0% 0% no-repeat padding-box;
     border: 2px solid #dcdcdc;
     .customer-form {
@@ -172,8 +174,8 @@ $authurName: #9d9d9d;
   }
 
   .order-summary-div {
-    height: 250px;
-    margin: 2% 21% 0% 10%;
+    height: fit-content;
+    margin: 2% 21% 3% 10%;
     border: 2px solid #dcdcdc;
     background: #ffffff 0% 0% no-repeat padding-box;
     h2 {
@@ -213,7 +215,7 @@ $authurName: #9d9d9d;
     .check-out-btn {
       width: 22%;
       color: $white;
-      margin: 0% 0% 0% 75%;
+      margin: 0% 0% 8% 75%;
       border: 1px solid #707070;
       font: normal normal medium 14px/17px Roboto;
       background: #3371b5 0% 0% no-repeat padding-box;

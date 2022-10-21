@@ -1,0 +1,50 @@
+$heading: #0a0102;
+$white: #ffffff;
+$authurName: #9d9d9d;
+
+.main-div {
+  height: 100%;
+  .my-cart-div {
+    margin: 2% 21% 2% 10%;
+    height: fit-content;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 2px solid #dcdcdc;
+    h2 {
+      margin: 3% 0% 0% 5%;
+      font-size: 16px;
+      font: normal normal medium 18px/22px Lato;
+    }
+    .book-info {
+      margin: 2% 50% 0% 5%;
+      // border-style: dashed;
+      display: flex; //f
+      img {
+        // border-style: dotted;
+        height: 110px;
+        width: 100px;
+        margin: 1% 0% 0% 0%;
+      }
+      .details-div {
+        // border-style: double;
+        background-color: $white;
+        width: 80%;
+        margin-left: 1%;
+        h2 {
+          color: $heading;
+          margin: 3% 0% 0% 7%;
+          font: normal normal bold Roboto;
+        }
+        span {
+          margin: 3% 0% 0% 7%;
+          font: normal normal normal 10px/12px Roboto;
+          color: $authurName;
+        }
+        p {
+          color: $heading;
+          margin: 3% 0% 0% 7%;
+          font: normal normal normal Roboto;
+        }
+      }
+    }
+  }
+}

@@ -10,12 +10,12 @@ import { UserModel } from 'src/app/Model/UserModel';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  login: UserLoginModel = new UserLoginModel("","");
+  login: UserLoginModel = new UserLoginModel('', '');
   eyeClick: boolean = false;
   token: string = '';
-  signup: UserModel=new UserModel("","","",91);
+  signup: UserModel = new UserModel('', '', '', 91);
 
-  constructor(private userService: UserService,private router:Router) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -28,11 +28,10 @@ export class LoginComponent implements OnInit {
   }
 
   userLogin() {
-    this.userService.userLogin(this.login).subscribe((response:any)=>{
-      this.token=response.data;
-      console.log(this.token);
+    this.userService.userLogin(this.login).subscribe((response: any) => {
+      this.token = response.data;
       this.router.navigate(['dashboard']);
-      localStorage.setItem("token", this.token);
+      localStorage.setItem('token', this.token);
     });
   }
 
@@ -40,8 +39,6 @@ export class LoginComponent implements OnInit {
     this.userService.addNewUser(this.signup).subscribe((response: any) => {
       this.userSignup = response.data;
       this.router.navigate(['dashboard']);
-      console.log(this.userSignup);
-
     });
   }
 }

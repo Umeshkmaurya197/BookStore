@@ -68,27 +68,22 @@ export class DashboardComponent implements OnInit {
       this.getAllBooks();
     }
     if (selectedValue == 'Price : High to Low') {
-      // this.getCartBooksByUserId();
       this.bookService.getBookByPriceHighToLow().subscribe((response: any) => {
         this.bookList = response.data;
         this.bookCount = this.bookList.length;
-        // console.log(this.bookList);
       });
     }
     if (selectedValue == 'Price : Low to High') {
-      // this.getCartBooksByUserId();
       this.bookService.getBookByPriceLowToHigh().subscribe((response: any) => {
         this.bookList = response.data;
         this.bookCount = this.bookList.length;
-        // console.log(this.bookList);
       });
     }
     if (selectedValue == 'Newest Arrivals') {
-      // this.getCartBooksByUserId();
       this.bookService.getBookByNewestArrivel().subscribe((response: any) => {
         this.bookList = response.data;
         this.bookCount = this.bookList.length;
-        // console.log(this.bookList);
+
       });
     }
   }
@@ -102,7 +97,6 @@ export class DashboardComponent implements OnInit {
       this.bookList.paginator = this.paginator;
       this.bookList.sort = this.sort;
       this.bookCount = this.bookList.length;
-      // console.log(this.bookList);
     });
   }
 
@@ -159,7 +153,6 @@ export class DashboardComponent implements OnInit {
           this.bookIdList = response.data.bookId;
           this.bookQuantityList = response.data.quantity;
           this.cartBookCount = this.bookIdList.length;
-          // console.log(this.userCart);
         });
     }
   }

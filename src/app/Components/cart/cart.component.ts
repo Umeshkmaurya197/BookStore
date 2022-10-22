@@ -47,11 +47,9 @@ export class CartComponent implements OnInit {
         .getCartBookByUserId(this.token)
         .subscribe((response: any) => {
           this.cartBookList = response.data;
-          console.log(this.cartBookList);
           this.getCartBooksByUserId();
         });
     } else {
-      console.log('you should login fisrt ');
       this.router.navigate(['login']);
     }
   }
@@ -70,7 +68,6 @@ export class CartComponent implements OnInit {
           this.userData = response.data.userData;
           this.bookIdList = response.data.bookId;
           this.cartBookCount = this.bookIdList.length;
-          console.log(this.userCart);
         });
     }
   }
@@ -83,7 +80,6 @@ export class CartComponent implements OnInit {
       this.cartService
         .updateDecreaseQuanity(this.token, bookId)
         .subscribe((response: any) => {
-          console.log(response);
           this.userCart = response.data;
           this.userCartBookQuantity = response.data.quantity;
           this.userData = response.data.userData;
@@ -102,7 +98,6 @@ export class CartComponent implements OnInit {
       this.cartService
         .updateIncreaseQuantity(this.token, bookId)
         .subscribe((response: any) => {
-          console.log(response);
           this.userCart = response.data;
           this.userCartBookQuantity = response.data.quantity;
           this.userData = response.data.userData;
@@ -121,7 +116,6 @@ export class CartComponent implements OnInit {
       this.cartService
         .removeBookFromCart(this.token, bookId)
         .subscribe((response: any) => {
-          console.log(response);
           this.userCart = response.data;
           this.userCartBookQuantity = response.data.quantity;
           this.userData = response.data.userData;
@@ -146,7 +140,6 @@ export class CartComponent implements OnInit {
   //continue to next step
   continue() {
     this.userPlaceOrder.cart = this.userCart;
-
     //Button functionality
     if (this.customerDetails == false) {
       this.customerDetails = true;
@@ -165,11 +158,9 @@ export class CartComponent implements OnInit {
         .subscribe((response: any) => {
           this.Id = response.data.orderId;
           console.log('Order Id :' + this.Id);
-          console.log(this.userData);
           this.router.navigate(['order-placed/' + this.Id]);
         });
     } else {
-      console.log('You should go for login first');
       this.router.navigate(['login']);
     }
   }

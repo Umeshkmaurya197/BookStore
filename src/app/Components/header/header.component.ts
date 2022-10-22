@@ -19,15 +19,11 @@ export class HeaderComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    console.log('outside of if', localStorage.getItem('token'));
     if (localStorage.getItem('token')) {
       this.token = true;
       this.userToken = localStorage.getItem('token');
-      console.log(this.token);
       this.userService.findUser(this.userToken).subscribe((response: any) => {
-        console.log(response);
         this.userModel = response.data;
-        console.log(this.userModel);
       });
     }
   }
@@ -40,7 +36,6 @@ export class HeaderComponent implements OnInit {
     if (localStorage.getItem('token')) {
       localStorage.removeItem('token');
       this.token=false;
-      // this.ngOnInit();
     }
   }
 }

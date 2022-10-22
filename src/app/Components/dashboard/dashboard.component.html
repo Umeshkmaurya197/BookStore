@@ -27,8 +27,8 @@
                   <p><br /><b>Rs.{{book.price}}</b></p>
                   <div class="buttons">
                     <button class="add-cart-btn" *ngIf="bookIdList.includes(book.bookId)==false" (click)="addtoCartPushId(book.bookId,1)" mat-button>ADD TO BAG</button>
-                    <button class="added-cart-btn" *ngIf="bookIdList.includes(book.bookId)==true" (click)="addtoCartPushId(book.bookId,1)" mat-button>ADDED TO BAG</button>
-                    <button class="wish-list-btn" *ngIf="bookIdList.includes(book.bookId)==false"  mat-button>WISHLIST</button>
+                    <button class="added-cart-btn" *ngIf="bookIdList.includes(book.bookId)==true" (click)="removeBook(book.bookId)" mat-button>ADDED TO BAG</button>
+                    <button class="wish-list-btn" *ngIf="bookIdList.includes(book.bookId)==false" routerLink="/wishlist" mat-button>WISHLIST</button>
                   </div>
                 </mat-grid-tile-footer>
               </mat-grid-tile>

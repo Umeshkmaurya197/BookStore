@@ -121,12 +121,29 @@ export class DashboardComponent implements OnInit {
       this.cartService
         .addBookToCart(this.token, this.userCart)
         .subscribe((response: any) => {
-          // console.log(response);
           this.ngOnInit();
         });
     } else {
       console.log('we are in add to cart btn an going for login page');
       this.router.navigate(['login']);
+    }
+  }
+
+  //=======================================================================
+  // remove books from cart
+  removeBook(bookId: number) {
+    if (localStorage.getItem('token') != null) {
+      this.token = localStorage.getItem('token');
+      this.cartService
+        .removeBookFromCart(this.token, bookId)
+        .subscribe((response: any) => {
+          console.log(response);
+          this.userCart = response.data;
+          this.bookQuantityList = response.data.quantity;
+          this.bookIdList = response.data.bookId;
+          this.cartBookCount = this.bookIdList.length;
+          this.ngOnInit();
+        });
     }
   }
 

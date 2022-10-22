@@ -1,11 +1,8 @@
 import { MatPaginator } from '@angular/material/paginator';
-import { BookModel } from './../../Model/BookModel';
 import { CartService } from './../../Services/cart.service';
 import { BookService } from './../../Services/book.service';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { throwError } from 'rxjs';
-import { ThisReceiver } from '@angular/compiler';
 import { CartModel } from 'src/app/Model/CartModel';
 import { MatSort } from '@angular/material/sort';
 
@@ -33,6 +30,8 @@ export class DashboardComponent implements OnInit {
   token: any;
   userCart: CartModel = new CartModel(0, [], []);
   selectorValue: string = '';
+  bookDescription:string='';
+  selected: string="";
 
   sortsBy: SortBy[] = [
     { value: '', viewValue: 'Sort by relevance' },
@@ -40,8 +39,9 @@ export class DashboardComponent implements OnInit {
     { value: 'Price : Low to High', viewValue: 'Price : Low to High' },
     { value: 'Newest Arrivals', viewValue: 'Newest Arrivals' },
   ];
-  // ==============================================================
-    constructor(
+
+
+  constructor(
     private bookService: BookService,
     private router: Router,
     private cartService: CartService
@@ -49,45 +49,46 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllBooks();
+    if(this.selected== 'Price : High to Low'){}
   }
 
   // ==============================================================
   // for Search Functionality
-  onSearchTextEnterd(serachValue:string){
-    this.searchText=serachValue;
-    console.log(this.searchText);
-
-
+  onSearchTextEnterd(searchValue:string){
+    this.searchText=searchValue;
   }
+
   // ==============================================================
   //for showing books filter by category
   filterSelector(selectedValue: string) {
+   this.selected = selectedValue;
+
     console.log('selector called ' + selectedValue);
     if (selectedValue == '') {
       this.getAllBooks();
     }
     if (selectedValue == 'Price : High to Low') {
-      this.getCartBooksByUserId();
+      // this.getCartBooksByUserId();
       this.bookService.getBookByPriceHighToLow().subscribe((response: any) => {
         this.bookList = response.data;
         this.bookCount = this.bookList.length;
-        console.log(this.bookList);
+        // console.log(this.bookList);
       });
     }
     if (selectedValue == 'Price : Low to High') {
-      this.getCartBooksByUserId();
+      // this.getCartBooksByUserId();
       this.bookService.getBookByPriceLowToHigh().subscribe((response: any) => {
         this.bookList = response.data;
         this.bookCount = this.bookList.length;
-        console.log(this.bookList);
+        // console.log(this.bookList);
       });
     }
     if (selectedValue == 'Newest Arrivals') {
-      this.getCartBooksByUserId();
+      // this.getCartBooksByUserId();
       this.bookService.getBookByNewestArrivel().subscribe((response: any) => {
         this.bookList = response.data;
         this.bookCount = this.bookList.length;
-        console.log(this.bookList);
+        // console.log(this.bookList);
       });
     }
   }
@@ -101,7 +102,7 @@ export class DashboardComponent implements OnInit {
       this.bookList.paginator = this.paginator;
       this.bookList.sort = this.sort;
       this.bookCount = this.bookList.length;
-      console.log(this.bookList);
+      // console.log(this.bookList);
     });
   }
 
@@ -120,7 +121,7 @@ export class DashboardComponent implements OnInit {
       this.cartService
         .addBookToCart(this.token, this.userCart)
         .subscribe((response: any) => {
-          console.log(response);
+          // console.log(response);
           this.ngOnInit();
         });
     } else {
@@ -141,8 +142,7 @@ export class DashboardComponent implements OnInit {
           this.bookIdList = response.data.bookId;
           this.bookQuantityList = response.data.quantity;
           this.cartBookCount = this.bookIdList.length;
-
-          console.log(this.userCart);
+          // console.log(this.userCart);
         });
     }
   }

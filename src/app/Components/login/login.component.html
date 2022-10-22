@@ -19,7 +19,7 @@
               <input matInput placeholder="Ex. abc@gmail.com" [(ngModel)]="login.email" [ngModelOptions]="{standalone: true}"/>
             </mat-form-field>
           </div>
-          <div class="password-div" *ngIf="eyeClick == false">
+          <div class="password-div" *ngIf="eyeClick == true">
             <mat-label class="input-label">Password</mat-label><br />
             <mat-form-field class="password-input" appearance="outline">
               <input
@@ -41,7 +41,7 @@
               </mat-icon>
             </mat-form-field>
           </div>
-          <div class="password-div" *ngIf="eyeClick == true">
+          <div class="password-div" *ngIf="eyeClick == false">
             <mat-label class="input-label">Password</mat-label><br />
             <mat-form-field class="password-input" appearance="outline">
               <input

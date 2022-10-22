@@ -29,7 +29,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -64,7 +64,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatSortModule,
     MatTableModule,
     NgxPaginationModule,
-    // Ng2SearchPipeModule
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent],

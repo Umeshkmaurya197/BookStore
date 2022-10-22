@@ -13,12 +13,12 @@
       </select>
     </div>
   </div>
-      <div class="grid-list-div">
-        <mat-grid-list cols="4" rowHeight="1:1.2" colWidth ="1:1.2" gutterSize="2.3%" >
-          <div *ngFor="let book of bookList | paginate: { itemsPerPage: 8, currentPage: page}">
-            <div *ngIf="searchText===''|| book.bookName.toLowerCase().includes(searchText.toLowerCase())">
+      <div class="grid-list-div " >
+        <mat-grid-list cols="4" rowHeight="1:1.2" colWidth ="1:1.2" gutterSize="2.3%">
+          <div *ngFor="let book of bookList | paginate: {itemsPerPage: 8, currentPage: page}">
+            <div *ngIf="searchText==='' || book.bookName.toLowerCase().includes(searchText.toLowerCase())" >
               <mat-grid-tile >
-                <mat-grid-tile-header class="grid-header">
+                <mat-grid-tile-header class="grid-header" matTooltip="{{book.bookDescription}}" matTooltipClass="tooltip" [matTooltipPosition]="'after'">
                   <img [src]="book.bookImg" alt="Notfound" />
                 </mat-grid-tile-header>
                 <mat-grid-tile-footer class="grid-footer">
@@ -35,6 +35,8 @@
             </div>
           </div>
         </mat-grid-list>
-        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        <div class='paginator'>
+          <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
       </div>
 </div>

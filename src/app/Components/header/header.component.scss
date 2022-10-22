@@ -2,9 +2,15 @@ $theme: #a03037;
 $white: #ffffff;
 
 .header {
+  display: flex;
   height: 4rem;
   background-color: $theme;
   padding-left: 13%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 234123;
   span {
     color: $white;
     font: normal normal normal 20px/26px Roboto;
@@ -48,11 +54,10 @@ $white: #ffffff;
     p {
       display: flex;
       font: normal normal normal 12px/13px Roboto;
-      letter-spacing: 0.45px;
+      letter-spacing: 0.2px;
       color: #ffffff;
     }
   }
-
   .cart-div {
     display: flex;
     margin: -1% 0% 0% 2%;
@@ -68,8 +73,8 @@ $white: #ffffff;
       color: $theme;
       background-color: $white;
       padding: 10px;
-      opacity: 50%;
-      border-radius: 100%;
+      opacity: 100%;
+      border-radius: 47%;
       margin: -9px 0px 10px -7px;
       padding-top: -10%;
       font: normal normal bold 13px/5px roboto;
@@ -77,15 +82,6 @@ $white: #ffffff;
       color: #a03037;
     }
     .cart-count1 {
-      color: $theme;
-      background-color: $white;
-      padding: 10px;
-      margin-bottom: 16px;
-      margin-left: -11px;
-      opacity: 0%;
-      border-radius: 100%;
-      font: normal normal bold 13px/5px roboto;
-      letter-spacing: 0px;
       color: #a03037;
       background-color: #a03037;
     }

@@ -15,17 +15,7 @@ export class CartComponent implements OnInit {
   myCart: boolean = false;
   customerDetails: boolean = false;
   userCart: CartModel = new CartModel(0, [], []);
-  userPlaceOrder: OrderModel = new OrderModel(
-    new CartModel(0, [], []),
-    0,
-    0,
-    '',
-    '',
-    '',
-    '',
-    '',
-    false
-  );
+  userPlaceOrder: OrderModel = new OrderModel(new CartModel(0, [], []),0,0,'','','','','',false);
   token: any;
 
   cartBookList: any = [];
@@ -36,7 +26,7 @@ export class CartComponent implements OnInit {
   userData: any;
   userCartBookQuantity: any;
   totalPrice: any = [];
-  Id:any;
+  Id: any;
 
   constructor(
     private cartService: CartService,
@@ -48,6 +38,7 @@ export class CartComponent implements OnInit {
     this.getCartBooks();
   }
 
+  //=======================================================================
   //getAllBooks
   getCartBooks() {
     if (localStorage.getItem('token') != null) {
@@ -65,6 +56,7 @@ export class CartComponent implements OnInit {
     }
   }
 
+  //=======================================================================
   //get Cart Data By User id
   getCartBooksByUserId() {
     if (localStorage.getItem('token') != null) {
@@ -83,64 +75,7 @@ export class CartComponent implements OnInit {
     }
   }
 
-  //continue to next step
-  continue() {
-    this.userPlaceOrder.cart = this.userCart;
-
-    //Button functionality
-    if (this.customerDetails == false) {
-      this.customerDetails = true;
-    } else {
-      this.customerDetails = false;
-    }
-    // console.log( "total price");
-
-    // total price
-    // for(let i=0;i<this.cartBookList.length;i++){
-    //   this.totalPrice+=this.cartBookList.price[i]*this.userCart.quantity[i];
-    // }
-
-    // console.log("user Place Order address : "+this.userPlaceOrder.address);
-    // console.log("user Place Order cancel : "+this.userPlaceOrder.cancel+"\n");
-    // console.log("user Place Order bookId : "+this.userPlaceOrder.cart.bookId);
-    // console.log("user Place Order userId : "+this.userData.userId);
-    // console.log("user Place Order bookquantity : "+this.userCartBookQuantity+"\n");
-    // console.log("user Place Order city : "+this.userPlaceOrder.city);
-    // console.log("user Place Order landmark : "+this.userPlaceOrder.landmark);
-    // console.log("user Place Order locality : "+this.userPlaceOrder.locality);
-    // console.log("user Place Order pin : "+this.userPlaceOrder.pin);
-    // console.log("user Place Order totalprice : "+this.userPlaceOrder.totalPrice);
-    // console.log("user Place Order type : "+this.userPlaceOrder.type);
-  }
-
-  //for Place order
-  checkoutBtn() {
-    if (localStorage.getItem('token') != null) {
-      this.token = localStorage.getItem('token');
-      this.orderService
-        .placeOrder(this.token, this.userPlaceOrder)
-        .subscribe((response: any) => {
-          this.Id = response.orderId;
-          console.log(response.orderId);
-          console.log(this.userData);
-          // this.router.navigate(['order-placed/:Id',this.Id]);
-          // this.router.navigateByUrl('order-placed/:Id',response.orderId);
-        });
-    } else {
-      console.log('You should go for login first');
-      this.router.navigate(['login']);
-    }
-  }
-
-  //navigate to next step
-  placeOrder() {
-    if (this.myCart == false) {
-      this.myCart = true;
-    } else {
-      this.myCart = false;
-    }
-  }
-
+  //=======================================================================
   // decrease the quantity of books
   decrease(bookId: number) {
     if (localStorage.getItem('token') != null) {
@@ -159,6 +94,7 @@ export class CartComponent implements OnInit {
     }
   }
 
+  //=======================================================================
   // increase the quantity of books
   increase(bookId: number) {
     if (localStorage.getItem('token') != null) {
@@ -177,8 +113,9 @@ export class CartComponent implements OnInit {
     }
   }
 
+  //=======================================================================
   // remove books from cart
-  removeQuantity(bookId: number) {
+  removeBook(bookId: number) {
     if (localStorage.getItem('token') != null) {
       this.token = localStorage.getItem('token');
       this.cartService
@@ -192,6 +129,48 @@ export class CartComponent implements OnInit {
           this.cartBookCount = this.bookIdList.length;
           this.ngOnInit();
         });
+    }
+  }
+
+  //=======================================================================
+  //navigate to next step
+  placeOrder() {
+    if (this.myCart == false) {
+      this.myCart = true;
+    } else {
+      this.myCart = false;
+    }
+  }
+
+  //=======================================================================
+  //continue to next step
+  continue() {
+    this.userPlaceOrder.cart = this.userCart;
+
+    //Button functionality
+    if (this.customerDetails == false) {
+      this.customerDetails = true;
+    } else {
+      this.customerDetails = false;
+    }
+  }
+
+  //=======================================================================
+  //for Place order
+  checkoutBtn() {
+    if (localStorage.getItem('token') != null) {
+      this.token = localStorage.getItem('token');
+      this.orderService
+        .placeOrder(this.token, this.userPlaceOrder)
+        .subscribe((response: any) => {
+          this.Id = response.data.orderId;
+          console.log('Order Id :' + this.Id);
+          console.log(this.userData);
+          this.router.navigate(['order-placed/' + this.Id]);
+        });
+    } else {
+      console.log('You should go for login first');
+      this.router.navigate(['login']);
     }
   }
 }

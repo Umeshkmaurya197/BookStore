@@ -1,3 +1,5 @@
+import { WishlistModel } from './../../Model/WishlistModel';
+import { WishlistService } from './../../Services/wishlist.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { CartService } from './../../Services/cart.service';
 import { BookService } from './../../Services/book.service';
@@ -19,7 +21,7 @@ export class DashboardComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatPaginator) sort!: MatSort;
 
-  searchText:string='';
+  searchText: string = '';
   page: number = 1;
   bookList: any = [];
   bookCount: number = 0;
@@ -29,9 +31,12 @@ export class DashboardComponent implements OnInit {
   bookQuantityList: any = [];
   token: any;
   userCart: CartModel = new CartModel(0, [], []);
+  userWishlist: WishlistModel = new WishlistModel(0, []);
   selectorValue: string = '';
-  bookDescription:string='';
-  selected: string="";
+  bookDescription: string = '';
+  selected: string = '';
+
+  bookIdWishList: any = [];
 
   sortsBy: SortBy[] = [
     { value: '', viewValue: 'Sort by relevance' },
@@ -40,28 +45,28 @@ export class DashboardComponent implements OnInit {
     { value: 'Newest Arrivals', viewValue: 'Newest Arrivals' },
   ];
 
-
   constructor(
     private bookService: BookService,
     private router: Router,
-    private cartService: CartService
+    private cartService: CartService,
+    private wishlistService: WishlistService
   ) {}
 
   ngOnInit(): void {
     this.getAllBooks();
-    if(this.selected== 'Price : High to Low'){}
+    // this.getAllWishListBooks();
   }
 
   // ==============================================================
   // for Search Functionality
-  onSearchTextEnterd(searchValue:string){
-    this.searchText=searchValue;
+  onSearchTextEnterd(searchValue: string) {
+    this.searchText = searchValue;
   }
 
   // ==============================================================
   //for showing books filter by category
   filterSelector(selectedValue: string) {
-   this.selected = selectedValue;
+    this.selected = selectedValue;
 
     console.log('selector called ' + selectedValue);
     if (selectedValue == '') {
@@ -83,7 +88,6 @@ export class DashboardComponent implements OnInit {
       this.bookService.getBookByNewestArrivel().subscribe((response: any) => {
         this.bookList = response.data;
         this.bookCount = this.bookList.length;
-
       });
     }
   }
@@ -92,10 +96,12 @@ export class DashboardComponent implements OnInit {
   // it will all  books available in bookstore
   getAllBooks() {
     this.getCartBooksByUserId();
+    this.getWishList();
     this.bookService.getAllbooks().subscribe((response: any) => {
       this.bookList = response.data;
+      console.log(this.bookList);
       this.bookList.paginator = this.paginator;
-      this.bookList.sort = this.sort;
+      // this.bookList.sort = this.sort;
       this.bookCount = this.bookList.length;
     });
   }
@@ -124,8 +130,53 @@ export class DashboardComponent implements OnInit {
   }
 
   //=======================================================================
+  //Add to wishlist
+  addToWishList(bookId: number) {
+    if (localStorage.getItem('token')) {
+      this.token = localStorage.getItem('token');
+      if (this.bookIdWishList.includes(bookId) == false) {
+        this.bookIdWishList.push(bookId);
+      }
+      this.userWishlist.bookId = this.bookIdWishList;
+      this.wishlistService
+        .createWishlist(this.token, this.userWishlist)
+        .subscribe((response: any) => {
+          this.ngOnInit();
+        });
+    }
+  }
+
+  //=======================================================================
+  //get All books In wishlist by UserId
+  getWishList() {
+    if (localStorage.getItem('token')) {
+      this.token = localStorage.getItem('token');
+      this.wishlistService
+        .getWishlistByUserId(this.token)
+        .subscribe((response: any) => {
+          this.userWishlist = response.data;
+          this.bookIdWishList = response.data.bookId;
+        });
+    }
+  }
+
+  //=======================================================================
+  //remove Book From Wishlist
+  removeBookFromWishlist(bookId: number) {
+    if (localStorage.getItem('token')) {
+      this.token = localStorage.getItem('token');
+      this.wishlistService
+        .removeBookFromWishlist(bookId, this.token)
+        .subscribe((response: any) => {
+          // console.log(response);
+          this.bookIdWishList = response.data.bookId;
+        });
+    }
+  }
+
+  //=======================================================================
   // remove books from cart
-  removeBook(bookId: number) {
+  removeBookFromCart(bookId: number) {
     if (localStorage.getItem('token') != null) {
       this.token = localStorage.getItem('token');
       this.cartService

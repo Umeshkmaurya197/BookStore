@@ -1,20 +1,19 @@
-<!-- <div class="main-div">
+<app-header></app-header>
+<div class="main-div">
   <div class="my-cart-div">
-    <h2>My Cart({{bookWishList.length}})</h2>
-    <div class="book-info" *ngFor="let cartBook of bookWishList ; let i = index" >
-      <img [src]="cartBook.bookImg" alt="Not found" />
+    <div class="heading-div">
+      <h2>My Wishlist({{userWishlistBookList.length}})</h2>
+    </div>
+    <div class="book-info" *ngFor="let book of userWishlistBookList ; let i = index" >
+      <img [src]="book.bookImg" alt="Not found" />
       <div class="details-div">
-        <h2>{{cartBook.bookName}}</h2>
-        <span>{{cartBook.authorName}}</span><br />
-        <p><b>Rs.{{cartBook.price * userCart.quantity[i]}}</b></p>
-        <div class="book-quantity-div">
-          <button class="decrease-btn" (click)="decrease(cartBook.bookId)">-</button>
-          <input class="quantity-box" type="text" disabled [value]="userCart.quantity[i]" />
-          <button class="increase-btn" (click)="increase(cartBook.bookId)">+</button>
-          <button class="remove-btn" (click)="removeQuantity(cartBook.bookId)">Remove</button>
-        </div>
+        <h2>{{book.bookName}}</h2>
+        <span>{{book.authorName}}</span><br />
+        <p><b>Rs.{{book.price}}</b></p>
+      </div>
+      <div class="book-quantity-div">
+        <mat-icon class="icon-st">delete</mat-icon>
       </div>
     </div>
-    <button mat-button class="place-order-btn"  (click)="placeOrder()">PLACE ORDER</button>
   </div>
-</div> -->
+</div>

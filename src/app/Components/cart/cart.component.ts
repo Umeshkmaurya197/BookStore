@@ -59,7 +59,6 @@ export class CartComponent implements OnInit {
   getCartBooksByUserId() {
     if (localStorage.getItem('token') != null) {
       this.token = localStorage.getItem('token');
-
       this.cartService
         .getCartByUserId(this.token)
         .subscribe((response: any) => {
@@ -129,7 +128,7 @@ export class CartComponent implements OnInit {
   //=======================================================================
   //navigate to next step
   placeOrder() {
-    if (this.myCart == false) {
+    if (this.myCart == false && this.cartBookCount!=0) {
       this.myCart = true;
     } else {
       this.myCart = false;

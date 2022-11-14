@@ -3,7 +3,7 @@ import { WishlistService } from './../../Services/wishlist.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { CartService } from './../../Services/cart.service';
 import { BookService } from './../../Services/book.service';
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartModel } from 'src/app/Model/CartModel';
 import { MatSort } from '@angular/material/sort';

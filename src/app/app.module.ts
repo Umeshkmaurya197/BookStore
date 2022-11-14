@@ -30,6 +30,7 @@ import { MatTableModule } from '@angular/material/table';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { MyorderComponent } from './Components/myorder/myorder.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     OrderPlacedComponent,
     LoginComponent,
     WishlistComponent,
+    MyorderComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,7 @@
         <p><b>Rs.{{book.price}}</b></p>
       </div>
       <div class="book-quantity-div">
-        <mat-icon class="icon-st">delete</mat-icon>
+        <mat-icon class="icon-st" (click)="removeBookFromWishList(book.bookId)" >delete</mat-icon>
       </div>
     </div>
   </div>

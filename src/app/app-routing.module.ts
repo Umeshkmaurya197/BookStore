@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './Components/cart/cart.component';
 import { OrderPlacedComponent } from './Components/order-placed/order-placed.component';
 import { LoginComponent } from './Components/login/login.component';
+import { MyorderComponent } from './Components/myorder/myorder.component';
 
 const routes: Routes = [{path:'',redirectTo:'/dashboard',pathMatch:'full'},
                         {path:'dashboard',component:DashboardComponent},
@@ -12,7 +13,8 @@ const routes: Routes = [{path:'',redirectTo:'/dashboard',pathMatch:'full'},
                         {path:'cart',component:CartComponent},
                         {path:'order-placed',component:OrderPlacedComponent},
                         {path:'order-placed/:Id',component:OrderPlacedComponent},
-                        {path:'wishlist',component:WishlistComponent}];
+                        {path:'wishlist',component:WishlistComponent},
+                        {path:'myorder',component:MyorderComponent}];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

@@ -7,11 +7,11 @@
     </form>
   </div>
   <div class="login-icon" mat-button [matMenuTriggerFor]="belowMenu">
-    <mat-icon  >person_outline</mat-icon>
+    <mat-icon>person_outline</mat-icon>
     <p  *ngIf="token">{{userModel.fullName}}</p>
     <p  *ngIf="!token">&nbsp;&nbsp;Profile</p>
   </div>
-      <mat-menu class="profile-box"  #belowMenu="matMenu" yPosition="below">
+      <mat-menu class="profile-box" #belowMenu="matMenu" yPosition="below">
         <div *ngIf="!token">
           <h5 style="margin: 3% 0% 0% 6%">Welcome</h5>
           <p style="text-align: left; margin: 5% 10% 0% 6%;font: normal normal normal 14px/16px Roboto;letter-spacing: 0px;color: #a3a0a0;opacity: 1;">
@@ -23,14 +23,14 @@
             </span>
           </button>
           <hr style="margin: 0% 7% 0% 7%;border: 1px solid #e2e2e2;opacity: 1;"/>
-          <button mat-button style="height: 90%;width: 100%;text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">
+          <button mat-button routerLink="/myorder" style="height: 90%;width: 100%;text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">
             <mat-icon style="margin: 3% 0% 6% 3%">assignment_turned_in</mat-icon>
             <span style="margin: 3% 0% 0% 3%">My Order</span>
           </button>
           <br/>
-          <button mat-button style="height: 100%;width: 100%;text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">
+          <button mat-button routerLink="/login" style="height: 100%;width: 100%;text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">
             <mat-icon style="margin: 3% 0% 6% 3%">favorite_border</mat-icon
-            ><span style="margin: 3% 0% 0% 3%" routerLink="/login">Wishlist</span>
+            ><span style="margin: 3% 0% 0% 3%" >Wishlist</span>
           </button>
         </div>
 
@@ -40,14 +40,14 @@
             <mat-icon style="margin: 3% 0% 6% 3%">person_outline</mat-icon>
             <span style="margin: 3% 0% 0% 3%">Profile</span>
           </button>
-          <button mat-button style="height: 90%;width: 100%;text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">
+          <button routerLink="/myorder" mat-button style="height: 90%;width: 100%;text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">
             <mat-icon style="margin: 3% 0% 6% 3%">assignment_turned_in</mat-icon>
             <span style="margin: 3% 0% 0% 3%">My Order</span>
           </button>
           <br/>
-          <button mat-button style="height: 100%;width: 100%;text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">
+          <button mat-button routerLink="/wishlist" style="height: 100%;width: 100%;text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">
             <mat-icon style="margin: 3% 0% 6% 3%">favorite_border</mat-icon
-            ><span style="margin: 3% 0% 0% 3%" routerLink="/wishlist">Wishlist</span>
+            ><span style="margin: 3% 0% 0% 3%" >Wishlist</span>
           </button>
           <button mat-button style="border: 1px solid #a03037;border-radius: 3%;margin: 3% 0% 6% 10%;width: 60%;border-radius: 2px;" (click)="logout()">
             <span style="text-align: left;font: normal normal normal 16px/16px Roboto;letter-spacing: 0px;color: #a03037;opacity: 1;">

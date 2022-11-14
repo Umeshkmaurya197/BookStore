@@ -14,4 +14,8 @@ export class OrderService {
   placeOrder(token:string,order:OrderModel){
     return this.http.post(`${this.baseUrl}/order/place-order?token=`+token,order);
   }
+
+  getOrderDetails(token:string){
+    return this.http.get(`${this.baseUrl}/order/get-order-data?token=`+token);
+  }
 }

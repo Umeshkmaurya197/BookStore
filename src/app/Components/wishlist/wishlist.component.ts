@@ -9,9 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wishlist.component.scss'],
 })
 export class WishlistComponent implements OnInit {
- // userWishList: WishlistModel = new WishlistModel(0, []);
-  // userWishlistBookModel: BookModel = new BookModel(0, '', '', '', '', 0, 0);
-  userWishlistBookList:any=[];
+  userWishlistBookList: any = [];
   token: any;
 
   constructor(private wishService: WishlistService) {}
@@ -23,10 +21,23 @@ export class WishlistComponent implements OnInit {
   getWishlistBooks() {
     if (localStorage.getItem('token') != null) {
       this.token = localStorage.getItem('token');
-      this.wishService.getWishlistBooksByUserId(this.token).subscribe((response: any) => {
+      this.wishService
+        .getWishlistBooksByUserId(this.token)
+        .subscribe((response: any) => {
           this.userWishlistBookList = response.data;
-          // this.userWishlistBookListCount =this.userWishlistBookList;
           console.log(this.userWishlistBookList);
+        });
+    }
+  }
+
+  removeBookFromWishList(bookId: number) {
+    if (localStorage.getItem('token') != null) {
+      this.token = localStorage.getItem('token');
+      this.wishService
+        .removeBookFromWishlist(bookId, this.token)
+        .subscribe((response: any) => {
+          console.log(response);
+          this.ngOnInit();
         });
     }
   }

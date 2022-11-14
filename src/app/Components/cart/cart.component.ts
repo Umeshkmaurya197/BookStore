@@ -156,6 +156,8 @@ export class CartComponent implements OnInit {
         .placeOrder(this.token, this.userPlaceOrder)
         .subscribe((response: any) => {
           this.Id = response.data.orderId;
+          console.log(response);
+
           console.log('Order Id :' + this.Id);
           this.router.navigate(['order-placed/' + this.Id]);
         });

@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div class="main-div">
+  <div class="my-cart-div">
+    <div class="heading-div">
+      <h2>My Order </h2>
+    </div>
+    <!-- <div *ngIf="orderDate!=null"> -->
+      <div class="book-info" *ngFor="let book of cartBookList ; let i = index" >
+        <img [src]="book.bookImg" alt="Not found" />
+        <div class="details-div">
+          <h2>{{book.bookName}}</h2>
+          <span>{{book.authorName}}</span><br />
+          <p><b>Rs.{{book.price}}</b></p>
+        </div>
+        <div class="book-quantity-div">
+          <h3 class="input-box"><mat-icon class="green-icon"></mat-icon> Order Placed on {{orderDate}}</h3>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+<!-- </div> -->
